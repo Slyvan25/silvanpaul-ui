@@ -1,8 +1,7 @@
 {
   "name": "@slyvan25/silvanpaul-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The shared UI library",
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Slyvan25/silvanpaul-ui.git"
@@ -16,15 +15,17 @@
     "url": "https://github.com/Slyvan25/silvanpaul-ui/issues"
   },
   "homepage": "https://github.com/Slyvan25/silvanpaul-ui#readme",
-
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
+    "storybook": "npm run docs:json && start-storybook -p 6006",
+    "build-storybook": "npm run docs:json && build-storybook"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/common": "~12.2.0",
@@ -42,8 +43,19 @@
     "@angular-devkit/build-angular": "~12.2.6",
     "@angular/cli": "~12.2.6",
     "@angular/compiler-cli": "~12.2.0",
+    "@angular/elements": "^12.2.7",
+    "@babel/core": "^7.15.5",
+    "@compodoc/compodoc": "^1.1.15",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/angular": "^6.3.8",
+    "@storybook/builder-webpack5": "^6.3.8",
+    "@storybook/manager-webpack5": "^6.3.8",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "@webcomponents/custom-elements": "^1.5.0",
+    "babel-loader": "^8.2.2",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
